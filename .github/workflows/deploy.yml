@@ -19,7 +19,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: What-The-Hack-DevOps-with-GitHub
-          template: ./azuredeploy.json
+          template: What-The-Hack-DevOps-with-GitHub/ARM-Templates/container-webapp-template.json
           parameters: storageAccountType=Standard_LRS
 
         # output containerName variable from template
