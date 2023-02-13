@@ -9,7 +9,7 @@ jobs:
       - name: check for Azure agent
         run: echo az
         # Log into Azure
-      - uses: azure/actions/login@v1
+      - uses: azure/actions/login@v3
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
