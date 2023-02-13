@@ -20,7 +20,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: What-The-Hack-DevOps-with-GitHub
           template: ./ARM-Templates/container-webapp-template.json
-          parameters: storageAccountType = Standard_LRS
+         # parameters: storageAccountType = Standard_LRS
 
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
