@@ -23,7 +23,6 @@ jobs:
           resourceGroupName: What-The-Hack-DevOps-with-GitHub
           template: ./ARM-Templates/container-webapp-template.json
           parameters: ./ARM-Templates/container-webapp-template.parameters.json  webAppName = targetEnv
-          parameters: repo/ARM/azuredeploy.resourcegroup.parameters.json  rgName=${{env.RESOURCEGROUP_NAME}}
          # parameters: storageAccountType = Standard_LRS
 
         # output containerName variable from template
