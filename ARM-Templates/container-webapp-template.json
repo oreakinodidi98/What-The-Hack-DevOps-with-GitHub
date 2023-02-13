@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "wthdwgdevops-dev",
+            "defaultValue": "wthdwgdevopsdev",
             "type": "String"
         },
         "hostingPlanName": {
-            "defaultValue": "wthdwgdevops-asp",
+            "defaultValue": "wthdwgdevopsasp",
             "type": "String"
         },
         "appInsightsLocation": {
@@ -15,7 +15,7 @@
             "type": "String"
         },
         "appInsightsName": {
-            "defaultValue": "wthdwgdevops-ai",
+            "defaultValue": "wthdwgdevopsai",
             "type": "String"
         },        
         "sku": {
