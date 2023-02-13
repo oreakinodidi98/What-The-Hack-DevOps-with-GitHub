@@ -6,7 +6,8 @@ jobs:
       steps:
               # Checkout code
       - uses: actions/checkout@main
-      
+      - name: check for Azure agent
+        run: echo az
         # Log into Azure
       - uses: azure/login@v1
         with:
