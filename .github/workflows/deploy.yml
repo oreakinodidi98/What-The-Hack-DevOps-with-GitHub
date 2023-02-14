@@ -2,7 +2,7 @@ name: Azure ARM
 on: workflow_dispatch
 
 env:
-  targetEnv: 'wthdwgdevopstest'
+  targetEnv: wthdwgdevopstest
 
 jobs:
  build-and-deploy:
