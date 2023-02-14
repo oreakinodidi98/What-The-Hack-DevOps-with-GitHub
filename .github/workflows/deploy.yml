@@ -23,8 +23,8 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: What-The-Hack-DevOps-with-GitHub
-          template: ./ARM-Templates/container-webapp-template.json webAppName=targetEnv
-         # parameters: ./ARM-Templates/container-webapp-template.json webAppName=targetEnv
+          template: ./ARM-Templates/container-webapp-template.json 
+          parameters: ./ARM-Templates/container-webapp-template.json webAppName=${{ targetEnv }}
          # parameters: storageAccountType=Standard_LRS
 
         # output containerName variable from template
