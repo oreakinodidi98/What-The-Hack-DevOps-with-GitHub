@@ -1,7 +1,7 @@
 on: workflow_dispatch
 
 env:
-  targetEnv: ${{ wthdwgdevopstest }}
+  targetEnv: wthdwgdevopstest
 
 name: Azure ARM
 jobs:
@@ -24,7 +24,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: What-The-Hack-DevOps-with-GitHub
           template: ./ARM-Templates/container-webapp-template.json 
-          parameters: webAppName=${{ targetEnv }}
+          parameters: webAppName=targetEnv
          # parameters: ./ARM-Templates/container-webapp-template.json webAppName=${{ targetEnv }}
          # parameters: storageAccountType=Standard_LRS
 
