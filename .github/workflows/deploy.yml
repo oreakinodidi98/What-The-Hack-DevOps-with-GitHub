@@ -1,7 +1,7 @@
 on: workflow_dispatch
 
 env:
-  targetEnv: wthdwgdevopstest
+  targetEnv: "wthdwgdevopstest"
 
 name: Azure ARM
 jobs:
