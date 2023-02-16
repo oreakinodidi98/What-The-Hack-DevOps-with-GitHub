@@ -41,11 +41,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    #- name: Login to azure
-     # uses: azure/actions/login@v1
-      #with:
-       # creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
     - name: Docker login
       run: docker login $registryName -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }}
     - name: Docker build
@@ -63,7 +58,6 @@ jobs:
       uses: azure/actions/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
     - name: Deploy to dev app service container
       uses: azure/webapps-deploy@v2
       with:
@@ -75,6 +69,10 @@ jobs:
     environment: TEST
     steps:
     - uses: actions/checkout@v2
+    - name: Login to azure
+      uses: azure/actions/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Deploy to test enviroment
       uses: azure/webapps-deploy@v2
       with:
@@ -87,7 +85,11 @@ jobs:
     environment: PROD
     steps:
     - uses: actions/checkout@v2
-    - name: Deploy to prod enciroment
+    - name: Login to azure
+      uses: azure/actions/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Deploy to prod enviroment
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{env.PRODENV}}
