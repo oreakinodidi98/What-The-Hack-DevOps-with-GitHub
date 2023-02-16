@@ -74,7 +74,7 @@ jobs:
     - name: Deploy to test enviroment
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{env.TESTENV}}
+        app-name: $TESTENV
         images: $registryName/$repositoryName:$tag
         
     #- name: Deploy to prod enciroment
