@@ -13,7 +13,7 @@ env:
   registryName: wthdwgdevopsreg.azurecr.io
   repositoryName: wth/dotnetcoreapp
   dockerFolderPath: Application/src/RazorPagesTestSample
-  tag: ${{github.run_number}}
+  tag: ${{ github.run_number }}
   
 jobs:
   
@@ -69,7 +69,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'wthdwgdevopsdev'
-        images: '$registryName/$repositoryName:$tag'
+        images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
     
     #- name: Deploy to test enviroment
      # uses: azure/webapps-deploy@v2
