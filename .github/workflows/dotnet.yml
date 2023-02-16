@@ -93,7 +93,7 @@ jobs:
     - name: Deploy to prod enviroment
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{env.PRODENV}}
+        app-name: ${{vars.PRODENV}}
         #images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
         #images: $registryName/$repositoryName:$tag
         images: ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}
