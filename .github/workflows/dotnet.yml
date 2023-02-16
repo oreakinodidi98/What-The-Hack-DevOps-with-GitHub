@@ -77,7 +77,8 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{vars.TESTENV}}
-        images: $registryName/$repositoryName:$tag
+        images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
+        #images: $registryName/$repositoryName:$tag
   
   Deploy_to_Prod:   
    
@@ -93,4 +94,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{env.PRODENV}}
-        images: $registryName/$repositoryName:$tag
+        #images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
+        #images: $registryName/$repositoryName:$tag
+        images: ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}
