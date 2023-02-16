@@ -53,8 +53,7 @@ jobs:
     - name: Docker push
       run: docker push $registryName/$repositoryName:$tag
  
-  deploy: 
-  
+  Deploy_to_DEV: 
     runs-on: ubuntu-latest
     environment: targetEnv
     
@@ -65,20 +64,31 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-    - name: Deploy to an app service container
+    - name: Deploy to dev app service container
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'wthdwgdevopsdev'
         images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
-    
+ 
+  Deploy_to_Test: 
+    runs-on: ubuntu-latest
+    environment: TEST
+    steps:
+    - uses: actions/checkout@v2
     - name: Deploy to test enviroment
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{vars.TESTENV}}
         images: $registryName/$repositoryName:$tag
-        
-    #- name: Deploy to prod enciroment
-     # uses: azure/webapps-deploy@v2
-      #with:
-       # app-name: ${{env.TESTENV}}
-        #images: $registryName/$repositoryName:$tag
+  
+  Deploy_to_Prod:   
+   
+    runs-on: ubuntu-latest
+    environment: PROD
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to prod enciroment
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{env.PRODENV}}
+        images: $registryName/$repositoryName:$tag
