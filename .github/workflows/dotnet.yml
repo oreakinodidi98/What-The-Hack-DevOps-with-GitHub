@@ -71,14 +71,14 @@ jobs:
         app-name: 'wthdwgdevopsdev'
         images: 'wthdwgdevopsreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}'
     
-    #- name: Deploy to test enviroment
-     # uses: azure/webapps-deploy@v2
-      #with:
-       # app-name: 'wthdwgdevopstest'
-        #images: $registryName/$repositoryName:$tag
+    - name: Deploy to test enviroment
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{env.TESTENV}}
+        images: $registryName/$repositoryName:$tag
         
     #- name: Deploy to prod enciroment
      # uses: azure/webapps-deploy@v2
       #with:
-       # app-name: ${{env.targetEnv}}
+       # app-name: ${{env.TESTENV}}
         #images: $registryName/$repositoryName:$tag
