@@ -47,7 +47,12 @@ jobs:
       run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
     - name: Docker push
       run: docker push $registryName/$repositoryName:$tag
-   
+    
+    - name: Login to azure
+    - uses: azure/actions/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
     - name: Deploy to an app service container
       uses: azure/webapps-deploy@v2
       with:
