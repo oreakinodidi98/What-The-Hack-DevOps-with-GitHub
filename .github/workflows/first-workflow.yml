@@ -1,0 +1,14 @@
+name: "first-workflow"
+
+on:
+  push:
+    branches: [ "main" ]
+ 
+ jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: job1
+        echo 'step1'
+      - name: job2
+        echo 'step1'
