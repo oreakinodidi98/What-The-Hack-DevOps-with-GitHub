@@ -4,7 +4,10 @@ on:
   push:
     branches: 
       - main
-
+env:
+  colourname: red
+  textname: 'Ship it!!!!!'
+  
 jobs:
   
   Job1:
@@ -21,8 +24,9 @@ jobs:
         # uses: mscoutermarsh/cowsays-action@822c8424f7ebc1f4c8b86b0bcb11e4051b7f42e2
       uses: mscoutermarsh/cowsays-action@v1
       with:
-        # What does the cow say?
-        text:'Ship it!!!!!' 
-        # optional, default is Ship it!!!!!
-        # Color of your cow
-        color: # optional, default is white
+    # What does the cow say?
+        text: ${{env.textname}}
+        colur: ${{env.colourname}}
+    # optional, default is Ship it!!!!!
+    # Color of your cow
+    #color:'red' # optional, default is white
