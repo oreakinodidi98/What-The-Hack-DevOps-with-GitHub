@@ -26,8 +26,8 @@ jobs:
       uses: mscoutermarsh/cowsays-action@v1
       with:
     # What does the cow say?
-        text: ${{env.textname}}
-        color: ${{env.colourname}}
+        text: hello world 
+        color: blue
     # optional, default is Ship it!!!!!
     # Color of your cow
     #color:'red' # optional, default is white
