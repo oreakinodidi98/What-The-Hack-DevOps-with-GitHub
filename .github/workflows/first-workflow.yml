@@ -27,7 +27,7 @@ jobs:
       with:
     # What does the cow say?
         text: hello world 
-        color: blue
+        color: red
     # optional, default is Ship it!!!!!
     # Color of your cow
     #color:'red' # optional, default is white
